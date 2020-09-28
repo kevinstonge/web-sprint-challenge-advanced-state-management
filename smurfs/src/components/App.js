@@ -1,16 +1,37 @@
 import React, { Component } from "react";
-import "./App.css";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import "../styles/App.scss";
+import { connect } from "react-redux";
+import { getSmurfs } from "../actions/actions";
+import ApiStatus from "./ApiStatus";
+import Header from "./Header";
+import SmurfList from "./SmurfList";
+import SmurfProfile from "./SmurfProfile";
 class App extends Component {
+  componentDidMount() {
+    this.props.getSmurfs();
+  }
   render() {
     return (
-      <div className="App">
-        <h1>SMURFS! W/Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
-      </div>
+      <Router>
+        <div className="App">
+          <Header />
+          <Route exact path="/">
+            <ApiStatus />
+            <SmurfList />
+          </Route>
+          <Route path="/:id">
+            <SmurfProfile />
+          </Route>
+        </div>
+      </Router>
     );
   }
 }
-
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    apiStatus: state.apiStatus,
+    smurfs: state.smurfs,
+  };
+};
+export default connect(mapStateToProps, { getSmurfs })(App);

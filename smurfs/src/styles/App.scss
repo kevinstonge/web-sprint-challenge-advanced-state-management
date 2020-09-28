@@ -1,0 +1,9 @@
+@import "./base.scss";
+.App {
+  @include flexC();
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  background: linear-gradient(to bottom, $b1, $b2);
+  color: $f1;
+}

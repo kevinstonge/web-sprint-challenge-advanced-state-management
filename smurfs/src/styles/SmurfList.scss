@@ -1,0 +1,6 @@
+@import "./base.scss";
+.smurfList {
+  @include flexR();
+  gap: 2rem;
+  flex-wrap: wrap;
+}
