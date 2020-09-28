@@ -1,0 +1,12 @@
+@import "./base.scss";
+header {
+  @include flexR();
+  font-size: 2.5rem;
+  width: 100vw;
+  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  text-shadow: 0.1rem 0.1rem 0.2rem white, -0.1rem -0.1rem 0.2rem white;
+  padding-bottom: 0.5rem;
+  box-shadow: 0 0.1rem 0.2rem white;
+  border-radius: 0 0 50% 50%;
+}

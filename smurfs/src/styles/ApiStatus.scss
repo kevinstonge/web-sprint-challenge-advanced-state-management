@@ -1,0 +1,9 @@
+@import "./base.scss";
+.apiStatus {
+  font-size: 1.1rem;
+  margin: 1rem;
+  background: $b2;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem 1rem $b2;
+  color: $b1;
+}

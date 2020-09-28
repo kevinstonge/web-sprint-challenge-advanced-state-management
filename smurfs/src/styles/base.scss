@@ -1,0 +1,48 @@
+@function shadow($c) {
+  @return transparentize(darken(adjust-hue($c, 180), 90), 0.7);
+}
+$b1: #99d7ff;
+$b2: #0d3b59;
+$f1: #e64ca9;
+
+@mixin flexC() {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+@mixin flexR() {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+}
+@mixin cloud() {
+  width: 12rem;
+  height: 12rem;
+  @include flexC();
+  justify-content: center;
+  gap: 0.2rem;
+  padding: 1rem;
+  border-radius: 40%;
+  color: $f1;
+  font-size: 1.2rem;
+}
+@mixin button() {
+  border: 1px solid transparent;
+  color: white;
+  background-color: $b2;
+  padding: 0.25rem;
+  border-radius: 20%;
+  &:hover {
+    cursor: pointer;
+    background-color: white;
+    color: $b2;
+    border: 1px solid $b2;
+  }
+}
